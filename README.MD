@@ -2,7 +2,7 @@
 
 
 
-**Codebase for "Hallucination Augmented Contrastive Learning for Multimodal Large Language Model"** [[Paper](https://arxiv.org/abs/2312.06968)] <br>
+**Codebase for "Hallucination Augmented Contrastive Learning for Multimodal Large Language Model"**
 
 
 ## Release
@@ -47,7 +47,7 @@ deepspeed llava/train/train_mem.py \
     --mm_use_im_start_end False \
     --mm_use_im_patch_token False \
     --bf16 True \
-    --output_dir ./output/ \
+    --output_dir ./output/llava-vicuna-7b-v1.5-pretrain \
     --num_train_epochs 1 \
     --per_device_train_batch_size 96 \
     --per_device_eval_batch_size 4 \
@@ -83,7 +83,7 @@ deepspeed  llava/train/train_mem.py \
     --deepspeed ./scripts/zero3.json \
     --model_name_or_path ./ckpt/vicuna-7b-v1.5 \
     --version v1 \
-    --data_path ./data/LLaVA-Instruct-150K/llava_v1_5_mix665k_new.json \
+    --data_path ./data/LLaVA-Instruct-150K/llava_v1_5_66k.json \
     --image_folder ./data/ \
     --contrastive_data_path ./data/LLaVA-Pretrain/sft_from_pretrain.json \
     --vision_tower ./ckpt/clip-vit-large-patch14-334 \
@@ -95,7 +95,7 @@ deepspeed  llava/train/train_mem.py \
     --image_aspect_ratio pad \
     --group_by_modality_length True \
     --bf16 True \
-    --output_dir ./output/llava-v1.5-13b-SFT \
+    --output_dir ./output/llava-v1.5-17b-SFT \
     --num_train_epochs 1 \
     --data_chunk_num 16 \
     --do_generation True \
@@ -122,20 +122,7 @@ deepspeed  llava/train/train_mem.py \
 ```
 </details>
 
-## Citation
 
-If you find LLaVA useful for your research and applications, please cite using this BibTeX:
-```bibtex
-@misc{jiang2023hallucination,
-      title={Hallucination Augmented Contrastive Learning for Multimodal Large Language Model}, 
-      author={Chaoya Jiang and Haiyang Xu and Mengfan Dong and Jiaxing Chen and Wei Ye and Ming Yan and Qinghao Ye and Ji Zhang and Fei Huang and Shikun Zhang},
-      year={2023},
-      eprint={2312.06968},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-
-```
 
 ## Acknowledgement
 
